@@ -1,42 +1,30 @@
 import Image from "next/image";
 import Link from "next/link";
-
-interface Project {
-  title: string;
-  image: string;
-}
-
-const recentProjects: Project[] = [
-  {
-    title: "PDF Actions",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-  },
-  {
-    title: "Invoice Suite",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-  },
-];
+import { projects } from "@/constants/projects";
 
 export default function RecentProjects() {
+  const recentProjects = projects.slice(0, 2);
+
   return (
     <section className="px-4 sm:px-8 lg:px-16 pt-20 pb-5">
       <h2 className="text-3xl sm:text-3xl font-semibold mb-8 sm:mb-12">Recent Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8">
         {recentProjects.map((project) => (
-          <div
-            key={project.title}
-            className="aspect-video bg-zinc-900 rounded-2xl overflow-hidden relative group cursor-pointer"
-          >
-            <Image
-              src={project.image}
-              alt={`${project.title} Project`}
-              fill
-              className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-            />
-            <div className="absolute bottom-6 left-6">
-              <h3 className="text-xl font-semibold">{project.title}</h3>
+          <Link href="/projects" key={project.id}>
+            <div
+              className="aspect-video bg-zinc-900 rounded-2xl overflow-hidden relative group cursor-pointer"
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+              />
+              <div className="absolute bottom-6 left-6">
+                <h3 className="text-xl font-semibold">{project.title}</h3>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="flex items-center justify-center gap-8 mt-8">

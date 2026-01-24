@@ -2,54 +2,13 @@ import Image from "next/image";
 import Sidebar from "@/components/Sidebar";
 import TimelineSection from "@/components/TimelineSection";
 import { MapPin, GraduationCap, Briefcase } from "lucide-react";
+import ParticlesBackground from "@/components/ParticlesBackground";
+import { experienceData, educationData } from "@/constants/about";
 
 export default function About() {
-  const experienceData = [
-  {
-    title: "Mobile App Developer",
-    highlight: "GenZFit",
-    highlightColor: "text-blue-400",
-    description: "Built and shipped a production-ready fitness & nutrition mobile app with real-time features and subscriptions",
-    date: "Sep 2025 - Nov 2025",
-    isActive: true,
-  },
-  {
-    title: "Full Stack Developer",
-    highlight: "ToolSnitch",
-    highlightColor: "text-zinc-300",
-    description: "Developed scalable seller and user portals with role-based access, payments, and automated workflows",
-    date: "Sep 2024 - Nov 2024",
-  },
-];
-
-
-  const educationData = [
-    {
-      title: "Bachelor of Technology in Computer Science and Engineering ",
-      highlight: "8.25 GPA",
-      highlightColor: "text-blue-400",
-      description: "Netaji Subhas Institute of Technology",
-      date: "2024 - 2028",
-      isActive: true,
-    },
-    {
-      title: "Class XII",
-      highlight: "94.8%",
-      highlightColor: "text-zinc-300",
-      description: "Veda Vyasa DAV Public School",
-      date: "2024",
-    },
-    {
-      title: "Class XII",
-      highlight: "91.0%",
-      highlightColor: "text-zinc-300",
-      description: "Veda Vyasa DAV Public School",
-      date: "2022",
-    },
-  ];
-
   return (
     <div className="flex min-h-screen bg-black">
+      {/* <ParticlesBackground /> */}
       <Sidebar />
 
       <main className="ml-0 lg:ml-[270px] flex-1 text-white">

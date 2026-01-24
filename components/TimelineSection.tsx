@@ -1,4 +1,5 @@
-import { GraduationCap, Briefcase, LucideIcon } from "lucide-react";
+import { LucideIcon } from "lucide-react";
+import { cn } from "@/libs/utils";
 
 interface TimelineItem {
   title: string;
@@ -16,6 +17,8 @@ interface TimelineSectionProps {
 }
 
 export default function TimelineSection({ title, items, icon: Icon }: TimelineSectionProps) {
+  const hasActiveItem = items.some(item => item.isActive);
+  
   return (
     <>
       <h3 className="text-2xl font-semibold mb-10 sm:mb-12 mt-12 sm:mt-16">
@@ -23,32 +26,31 @@ export default function TimelineSection({ title, items, icon: Icon }: TimelineSe
       </h3>
       <div className="relative max-w-4xl">
         {/* Timeline line */}
-        <div className="absolute left-[13px] top-0 bottom-0 w-[2px] bg-linear-to-b from-blue-400 via-zinc-700 to-zinc-800"></div>
+        <div className={cn(
+          "absolute left-[13px] top-0 bottom-0 w-[2px] bg-linear-to-b to-zinc-800",
+          hasActiveItem ? "from-blue-400 via-zinc-700" : "from-zinc-700 via-zinc-700"
+        )}></div>
 
         {/* Timeline entries */}
         <div className="space-y-10 sm:space-y-12">
           {items.map((item, index) => (
             <div key={index} className="relative pl-10 sm:pl-12">
               <div
-                className={`absolute left-0 top-1 w-[28px] h-[28px] rounded-full flex items-center justify-center ${
-                  item.isActive
-                    ? "bg-blue-500/80"
-                    : index === 0 && !items.some(i => i.isActive)
-                    ? "bg-blue-500/80"
-                    : index === 1
-                    ? "bg-zinc-700 border-2 border-zinc-600"
-                    : "bg-zinc-800 border-2 border-zinc-700"
-                }`}
+                className={cn(
+                  "absolute left-0 top-1 w-[28px] h-[28px] rounded-full flex items-center justify-center",
+                  item.isActive && "bg-blue-500/80",
+                  !item.isActive && index === 0 && "bg-zinc-700 border-2 border-zinc-600",
+                  !item.isActive && index === 1 && "bg-zinc-700 border-2 border-zinc-600",
+                  !item.isActive && index > 1 && "bg-zinc-800 border-2 border-zinc-700"
+                )}
               >
                 <Icon
                   size={16}
-                  className={
-                    item.isActive || (index === 0 && !items.some(i => i.isActive))
-                      ? "text-white"
-                      : index === 1
-                      ? "text-zinc-300"
-                      : "text-zinc-400"
-                  }
+                  className={cn(
+                    item.isActive && "text-white",
+                    !item.isActive && (index === 0 || index === 1) && "text-zinc-300",
+                    !item.isActive && index > 1 && "text-zinc-400"
+                  )}
                 />
               </div>
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4">

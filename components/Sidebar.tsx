@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Home, User, Briefcase, Star, Mail, Github, Linkedin, Instagram, Menu, X, FileText } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
+import { cn } from '@/libs/utils';
 
 export default function Sidebar() {
   const [activeSection, setActiveSection] = useState('home');
@@ -42,10 +43,10 @@ export default function Sidebar() {
   };
 
   const socialIcons = [
+    { name: 'Resume', icon: FileText, href: '/resume.pdf' },
     { name: 'GitHub', icon: Github, href: 'https://github.com/RoshanSharma11' },
     { name: 'LinkedIn', icon: Linkedin, href: 'https://www.linkedin.com/in/theroshansharma' },
     { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/roshansharma_11/' },
-    { name: 'Resume', icon: FileText, href: '/resume.pdf' },
   ];
 
   return (
@@ -67,9 +68,10 @@ export default function Sidebar() {
       )}
 
       {/* Sidebar */}
-      <div className={`w-[270px] h-screen bg-black border-r border-zinc-800 flex flex-col fixed left-0 top-0 z-40 transition-transform duration-300 ${
-        mobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
-      }`}>
+      <div className={cn(
+        "w-[270px] h-screen bg-black border-r border-zinc-800 flex flex-col fixed left-0 top-0 z-40 transition-transform duration-300",
+        mobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+      )}>
       {/* Profile Section */}
       <div className="flex flex-col items-center pt-12 pb-6 px-6">
         <div className="w-44 h-44 rounded-lg overflow-hidden mb-4 bg-zinc-800">
@@ -96,11 +98,12 @@ export default function Sidebar() {
             <button
               key={item.id}
               onClick={() => handleNavClick(item)}
-              className={`w-full flex items-center gap-4 px-4 py-3 rounded-lg mb-2 transition-colors ${
+              className={cn(
+                "w-full flex items-center gap-4 px-4 py-3 rounded-lg mb-2 transition-colors",
                 getActiveItem() === item.id
-                  ? 'bg-zinc-800 text-white'
-                  : 'text-zinc-400 hover:bg-zinc-900 hover:text-white'
-              }`}
+                  ? "bg-zinc-800 text-white"
+                  : "text-zinc-400 hover:bg-zinc-900 hover:text-white"
+              )}
             >
               <Icon size={20} />
               <span className="text-base">{item.label}</span>

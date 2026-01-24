@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import SkillCard from "./SkillCard";
 import { mainSkills, additionalSkills } from "@/constants/skills";
+import { cn } from "@/libs/utils";
 
 export default function SkillsSection() {
   const [showAllSkills, setShowAllSkills] = useState(false);
@@ -34,7 +35,10 @@ export default function SkillsSection() {
           {showAllSkills ? "Show Less" : "View All Skills"}
           <ChevronDown
             size={16}
-            className={`transition-transform ${showAllSkills ? "rotate-180" : ""}`}
+            className={cn(
+              "transition-transform",
+              showAllSkills && "rotate-180"
+            )}
           />
         </button>
         <div className="hidden sm:block flex-1 h-px bg-linear-to-r from-zinc-800 to-transparent max-w-3xl"></div>

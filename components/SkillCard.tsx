@@ -14,7 +14,7 @@ export default function SkillCard({ skill }: SkillCardProps) {
           alt={skill.name}
           width={56}
           height={56}
-          className="w-14 h-14 object-cover"
+          className="w-14 h-14 object-contain"
         />
       </div>
       <h3 className="text-2xl font-semibold mb-2">{skill.name}</h3>
