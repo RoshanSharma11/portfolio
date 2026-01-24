@@ -23,7 +23,7 @@ export default function TimelineSection({ title, items, icon: Icon }: TimelineSe
       </h3>
       <div className="relative max-w-4xl">
         {/* Timeline line */}
-        <div className="absolute left-[13px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-blue-400 via-zinc-700 to-zinc-800"></div>
+        <div className="absolute left-[13px] top-0 bottom-0 w-[2px] bg-linear-to-b from-blue-400 via-zinc-700 to-zinc-800"></div>
 
         {/* Timeline entries */}
         <div className="space-y-10 sm:space-y-12">

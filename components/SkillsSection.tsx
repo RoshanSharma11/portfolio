@@ -26,7 +26,7 @@ export default function SkillsSection() {
       )}
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mt-8">
-        <div className="hidden sm:block flex-1 h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent max-w-3xl"></div>
+        <div className="hidden sm:block flex-1 h-px bg-linear-to-r from-transparent via-zinc-800 to-transparent max-w-3xl"></div>
         <button
           onClick={() => setShowAllSkills(!showAllSkills)}
           className="px-6 py-2.5 text-sm border border-zinc-700 rounded-md hover:bg-zinc-900 hover:border-zinc-600 transition-all flex items-center gap-2 whitespace-nowrap"
@@ -37,7 +37,7 @@ export default function SkillsSection() {
             className={`transition-transform ${showAllSkills ? "rotate-180" : ""}`}
           />
         </button>
-        <div className="hidden sm:block flex-1 h-px bg-gradient-to-r from-zinc-800 to-transparent max-w-3xl"></div>
+        <div className="hidden sm:block flex-1 h-px bg-linear-to-r from-zinc-800 to-transparent max-w-3xl"></div>
       </div>
     </section>
   );

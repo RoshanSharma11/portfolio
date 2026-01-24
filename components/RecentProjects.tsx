@@ -40,13 +40,13 @@ export default function RecentProjects() {
         ))}
       </div>
       <div className="flex items-center justify-center gap-8 mt-8">
-        <div className="flex-1 h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent max-w-3xl"></div>
+        <div className="flex-1 h-px bg-linear-to-r from-transparent via-zinc-800 to-transparent max-w-3xl"></div>
         <Link href="/projects">
           <button className="px-6 py-2.5 text-sm border border-zinc-700 rounded-md hover:bg-zinc-900 hover:border-zinc-600 transition-all whitespace-nowrap">
             View All Projects →
           </button>
         </Link>
-        <div className="flex-1 h-px bg-gradient-to-r from-zinc-800 to-transparent max-w-3xl"></div>
+        <div className="flex-1 h-px bg-linear-to-r from-zinc-800 to-transparent max-w-3xl"></div>
       </div>
     </section>
   );
