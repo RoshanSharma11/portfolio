@@ -51,6 +51,11 @@ export const professionalServiceSchema = {
     name: 'Roshan Sharma',
     jobTitle: 'Full Stack Software Engineer',
   },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Remote',
+    addressCountry: 'Worldwide',
+  },
   areaServed: 'Worldwide',
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
