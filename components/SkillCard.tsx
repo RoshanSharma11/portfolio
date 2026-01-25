@@ -11,7 +11,7 @@ export default function SkillCard({ skill }: SkillCardProps) {
       <div className="w-14 h-14 flex items-center justify-center mb-4">
         <Image
           src={skill.icon}
-          alt={skill.name}
+          alt={`${skill.name} - ${skill.category} technology icon`}
           width={56}
           height={56}
           className="w-14 h-14 object-contain"

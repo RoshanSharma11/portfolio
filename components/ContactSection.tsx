@@ -17,6 +17,7 @@ export default function ContactSection() {
           <button 
             onClick={() => setShowContactModal(true)}
             className="px-6 py-3 bg-white text-black rounded-lg hover:bg-zinc-200 transition-colors text-base font-semibold"
+            aria-label="Open contact form to get in touch with Roshan Sharma"
           >
             Get in Touch
           </button>

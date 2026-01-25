@@ -16,7 +16,7 @@ export default function RecentProjects() {
             >
               <Image
                 src={project.image}
-                alt={project.title}
+                alt={`${project.title} - Recent software development project by Roshan Sharma`}
                 fill
                 className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
               />
@@ -30,7 +30,10 @@ export default function RecentProjects() {
       <div className="flex items-center justify-center gap-8 mt-8">
         <div className="flex-1 h-px bg-linear-to-r from-transparent via-zinc-800 to-transparent max-w-3xl"></div>
         <Link href="/projects">
-          <button className="px-6 py-2.5 text-sm border border-zinc-700 rounded-md hover:bg-zinc-900 hover:border-zinc-600 transition-all whitespace-nowrap">
+          <button 
+            className="px-6 py-2.5 text-sm border border-zinc-700 rounded-md hover:bg-zinc-900 hover:border-zinc-600 transition-all whitespace-nowrap"
+            aria-label="View all projects by Roshan Sharma"
+          >
             View All Projects →
           </button>
         </Link>

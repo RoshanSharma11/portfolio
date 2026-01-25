@@ -49,6 +49,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-zinc-400 hover:text-white transition-colors"
+          aria-label="Close contact form"
         >
           <X size={24} />
         </button>
@@ -96,6 +97,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             type="submit"
             disabled={isSubmitting}
             className="w-full px-6 py-3 bg-white text-black rounded-lg hover:bg-zinc-200 transition-colors font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
+            aria-label={isSubmitting ? 'Sending message' : 'Send message to Roshan Sharma'}
           >
             {isSubmitting ? 'Sending...' : 'Send Message'}
           </button>

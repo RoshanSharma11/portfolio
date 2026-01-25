@@ -31,6 +31,8 @@ export default function SkillsSection() {
         <button
           onClick={() => setShowAllSkills(!showAllSkills)}
           className="px-6 py-2.5 text-sm border border-zinc-700 rounded-md hover:bg-zinc-900 hover:border-zinc-600 transition-all flex items-center gap-2 whitespace-nowrap"
+          aria-label={showAllSkills ? "Show fewer skills" : "View all technical skills"}
+          aria-expanded={showAllSkills}
         >
           {showAllSkills ? "Show Less" : "View All Skills"}
           <ChevronDown

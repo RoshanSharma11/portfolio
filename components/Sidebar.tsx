@@ -55,6 +55,8 @@ export default function Sidebar() {
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-zinc-900 rounded-lg text-white"
+        aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={mobileMenuOpen}
       >
         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
@@ -77,7 +79,7 @@ export default function Sidebar() {
         <div className="w-44 h-44 rounded-lg overflow-hidden mb-4 bg-zinc-800">
           <Image
             src="/profile.jpeg"
-            alt="Profile"
+            alt="Roshan Sharma - Full Stack Software Engineer profile picture"
             width={176}
             height={176}
             className="object-cover "
@@ -104,6 +106,8 @@ export default function Sidebar() {
                   ? "bg-zinc-800 text-white"
                   : "text-zinc-400 hover:bg-zinc-900 hover:text-white"
               )}
+              aria-label={`Navigate to ${item.label} page`}
+              aria-current={getActiveItem() === item.id ? 'page' : undefined}
             >
               <Icon size={20} />
               <span className="text-base">{item.label}</span>

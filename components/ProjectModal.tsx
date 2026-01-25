@@ -36,6 +36,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
         <button
           onClick={onClose}
           className="absolute top-6 right-6 text-white hover:text-white hover:bg-white/10 transition-all z-50 rounded-full p-2.5 bg-black/40 backdrop-blur-md border border-white/10"
+          aria-label="Close project details modal"
         >
           <X size={20} />
         </button>
@@ -49,7 +50,7 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
           {/* Image */}
           <Image
             src={project.image}
-            alt={project.title}
+            alt={`${project.title} - Full stack development project by Roshan Sharma`}
             fill
             className="object-cover"
             priority

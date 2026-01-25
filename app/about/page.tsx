@@ -1,9 +1,28 @@
-import Image from "next/image";
 import Sidebar from "@/components/Sidebar";
 import TimelineSection from "@/components/TimelineSection";
 import { MapPin, GraduationCap, Briefcase } from "lucide-react";
 import ParticlesBackground from "@/components/ParticlesBackground";
 import { experienceData, educationData } from "@/constants/about";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'About Roshan Sharma - Full Stack Developer Experience & Background',
+  description: 'Learn about Roshan Sharma - Full Stack Software Engineer with expertise in system design, scalable backend architecture, and production-ready web platforms. View experience, education, and technical background.',
+  keywords: [
+    'About Roshan Sharma',
+    'Full Stack Developer Bio',
+    'Software Engineer Experience',
+    'Backend Developer Background',
+    'System Design Expert',
+    'Roshan Sharma Experience',
+    'Roshan Sharma Education',
+  ],
+  openGraph: {
+    title: 'About Roshan Sharma - Full Stack Developer Experience & Background',
+    description: 'Learn about Roshan Sharma - Full Stack Software Engineer with expertise in system design, scalable backend architecture, and production-ready web platforms.',
+    url: 'https://www.roshansharma.net/about',
+  },
+};
 
 export default function About() {
   return (
