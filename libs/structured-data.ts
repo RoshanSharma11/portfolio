@@ -6,13 +6,13 @@ export const personSchema = {
   '@type': 'Person',
   name: 'Roshan Sharma',
   jobTitle: 'Full Stack Software Engineer',
-  url: 'https://www.roshansharma.net',
+  url: 'https://roshansharma.net',
   sameAs: [
     'https://github.com/RoshanSharma11',
     'https://linkedin.com/in/theroshansharma',
     'https://x.com/RoshanS25033',
   ],
-  image: 'https://www.roshansharma.net/profile.jpeg',
+  image: 'https://roshansharma.net/profile.jpeg',
   description: 'Full Stack Software Engineer specializing in scalable backend architecture, system design, and production-ready web platforms.',
   knowsAbout: [
     'Full Stack Development',
@@ -33,7 +33,7 @@ export const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Roshan Sharma Portfolio',
-  url: 'https://www.roshansharma.net',
+  url: 'https://roshansharma.net',
   description: 'Professional portfolio of Roshan Sharma - Full Stack Software Engineer',
   author: {
     '@type': 'Person',

@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.roshansharma.net'), // Update with your actual domain
+  metadataBase: new URL('https://roshansharma.net'),
   title: {
     default: 'Roshan Sharma - Full Stack Software Engineer | Hire Expert Developer',
     template: '%s | Roshan Sharma',
@@ -44,12 +44,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: '/',
+    canonical: 'https://roshansharma.net',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://www.roshansharma.net',
+    url: 'https://roshansharma.net',
     title: 'Roshan Sharma - Full Stack Software Engineer | Hire Expert Developer',
     description: 'Full Stack Software Engineer specializing in scalable backend architecture, system design, and production-ready web platforms. Available for hire.',
     siteName: 'Roshan Sharma Portfolio',

@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     'Web Development Portfolio',
   ],
   alternates: {
-    canonical: '/projects',
+    canonical: 'https://roshansharma.net/projects',
   },
   openGraph: {
     title: 'Projects by Roshan Sharma - Full Stack Development Portfolio',
     description: 'Explore projects by Roshan Sharma showcasing expertise in full-stack development, system design, and scalable applications.',
-    url: 'https://www.roshansharma.net/projects',
+    url: 'https://roshansharma.net/projects',
   },
 };
 

@@ -18,12 +18,12 @@ export const metadata: Metadata = {
     'Roshan Sharma Education',
   ],
   alternates: {
-    canonical: '/about',
+    canonical: 'https://roshansharma.net/about',
   },
   openGraph: {
     title: 'About Roshan Sharma - Full Stack Developer Experience & Background',
     description: 'Learn about Roshan Sharma - Full Stack Software Engineer with expertise in system design, scalable backend architecture, and production-ready web platforms.',
-    url: 'https://www.roshansharma.net/about',
+    url: 'https://roshansharma.net/about',
   },
 };
 
