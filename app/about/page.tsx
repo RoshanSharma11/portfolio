@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     'Roshan Sharma Experience',
     'Roshan Sharma Education',
   ],
+  alternates: {
+    canonical: '/about',
+  },
   openGraph: {
     title: 'About Roshan Sharma - Full Stack Developer Experience & Background',
     description: 'Learn about Roshan Sharma - Full Stack Software Engineer with expertise in system design, scalable backend architecture, and production-ready web platforms.',

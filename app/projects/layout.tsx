@@ -14,6 +14,9 @@ export const metadata: Metadata = {
     'System Design Projects',
     'Web Development Portfolio',
   ],
+  alternates: {
+    canonical: '/projects',
+  },
   openGraph: {
     title: 'Projects by Roshan Sharma - Full Stack Development Portfolio',
     description: 'Explore projects by Roshan Sharma showcasing expertise in full-stack development, system design, and scalable applications.',

@@ -41,7 +41,7 @@ export const educationData: TimelineItem[] = [
     date: "2024",
   },
   {
-    title: "Class XII",
+    title: "Class X",
     highlight: "93.0%",
     highlightColor: "text-zinc-300",
     description: "Masonic Public School, Vasant Kunj",
