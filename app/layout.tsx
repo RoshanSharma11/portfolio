@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { personSchema, websiteSchema, professionalServiceSchema } from "@/libs/structured-data";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
   weight: ["400", "500", "600", "700"],
@@ -108,6 +109,7 @@ export default function RootLayout({
         className={`${inter.variable} font-inter antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
