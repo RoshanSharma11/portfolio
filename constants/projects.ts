@@ -20,8 +20,7 @@ export const projects: Project[] = [
       "A high-throughput concurrent matching engine optimized for low-latency, real-time intent processing.",
     longDescription:
       "Matchloop is a high-performance concurrent matching engine designed to process millions of intents per second with predictable low-latency behavior. The system is architected around event-driven pipelines and memory-efficient concurrency patterns, achieving sub-millisecond matching latency under sustained load. The project focuses heavily on throughput optimization, tail-latency control, and scalable system design principles used in real-world matching and routing systems.",
-    image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop",
+    image: "/projects/matchloop.png",
     highlights: [
       "Achieved 2.5M intents/sec throughput on a single engine instance",
       "Maintained P50 latency of 150–180µs and P99 under 9ms under load",
