@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/resume.pdf",
+        source: "/resume-v2.pdf",
         destination: "/resume.pdf",
         permanent: true,
       },
