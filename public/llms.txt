@@ -14,7 +14,7 @@ Roshan Sharma builds production-ready web platforms, backend services, mobile ap
 - Projects: https://roshansharma.net/projects
 - FAQ: https://roshansharma.net/faq
 - Contact: https://roshansharma.net/contact
-- Resume: https://roshansharma.net/resume-v2.pdf
+- Resume: https://roshansharma.net/resume.pdf
 
 ## Services
 

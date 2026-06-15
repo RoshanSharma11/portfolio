@@ -43,7 +43,7 @@ A modern, responsive portfolio website built with Next.js 16, showcasing my proj
 - [GitHub](https://github.com/RoshanSharma11)
 - [LinkedIn](https://www.linkedin.com/in/theroshansharma)
 - [Instagram](https://www.instagram.com/roshansharma_11/)
-- Resume: `/resume-v2.pdf`
+- Resume: `/resume.pdf`
 
 ## Getting Started
 
@@ -71,7 +71,7 @@ npm install
    - Place your image at `public/profile.jpeg`
 
 4. Add your resume:
-   - Place your PDF at `public/resume-v2.pdf`
+   - Place your PDF at `public/resume.pdf`
 
 5. Run the development server:
 

@@ -7,7 +7,7 @@ const footerLinks = [
   { label: "Projects", href: "/projects" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
-  { label: "Resume", href: "/resume-v2.pdf" },
+  { label: "Resume", href: "/resume.pdf" },
 ];
 
 export default function SiteFooter() {
@@ -28,7 +28,8 @@ export default function SiteFooter() {
         </ul>
       </nav>
       <p className="mt-4 text-xs text-zinc-600">
-        © {new Date().getFullYear()} Roshan Sharma — Full Stack Software Engineer. Available for remote and freelance work.
+        © {new Date().getFullYear()} Roshan Sharma — Full Stack Software
+        Engineer. Available for remote and freelance work.
       </p>
     </footer>
   );

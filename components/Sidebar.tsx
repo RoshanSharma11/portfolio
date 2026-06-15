@@ -28,7 +28,13 @@ export default function Sidebar() {
 
   const menuItems = [
     { id: "home", icon: Home, label: "Home", href: "/", type: "page" as const },
-    { id: "about", icon: User, label: "About", href: "/about", type: "page" as const },
+    {
+      id: "about",
+      icon: User,
+      label: "About",
+      href: "/about",
+      type: "page" as const,
+    },
     {
       id: "services",
       icon: Wrench,
@@ -79,7 +85,7 @@ export default function Sidebar() {
   };
 
   const socialIcons = [
-    { name: "Resume", icon: FileText, href: "/resume-v2.pdf" },
+    { name: "Resume", icon: FileText, href: "/resume.pdf" },
     { name: "GitHub", icon: Github, href: "https://github.com/RoshanSharma11" },
     {
       name: "LinkedIn",
@@ -121,94 +127,106 @@ export default function Sidebar() {
             : "-translate-x-full lg:translate-x-0",
         )}
       >
-        <div className="sidebar-tone absolute inset-0 pointer-events-none" aria-hidden="true" />
-        <div className="sidebar-grain-coarse absolute inset-0 pointer-events-none" aria-hidden="true" />
-        <div className="sidebar-grain-fine absolute inset-0 pointer-events-none" aria-hidden="true" />
+        <div
+          className="sidebar-tone absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+        />
+        <div
+          className="sidebar-grain-coarse absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+        />
+        <div
+          className="sidebar-grain-fine absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+        />
 
         <div className="relative z-10 flex flex-col h-full">
-        <div className="flex flex-col items-center pt-12 pb-6 px-6">
-          <Link href="/" className="relative w-44 h-44 rounded-lg overflow-hidden mb-4 bg-zinc-900/60 ring-1 ring-white/10">
-            <Image
-              src="/profile.jpeg"
-              alt="Roshan Sharma - Full Stack Software Engineer profile picture"
-              fill
-              sizes="176px"
-              priority
-              className="object-cover"
-            />
-          </Link>
-          <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 rounded-full">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span className="text-green-500 text-sm font-medium">
-              Available for Work
-            </span>
+          <div className="flex flex-col items-center pt-12 pb-6 px-6">
+            <Link
+              href="/"
+              className="relative w-44 h-44 rounded-lg overflow-hidden mb-4 bg-zinc-900/60 ring-1 ring-white/10"
+            >
+              <Image
+                src="/profile.jpeg"
+                alt="Roshan Sharma - Full Stack Software Engineer profile picture"
+                fill
+                sizes="176px"
+                priority
+                className="object-cover"
+              />
+            </Link>
+            <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 rounded-full">
+              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <span className="text-green-500 text-sm font-medium">
+                Available for Work
+              </span>
+            </div>
           </div>
-        </div>
 
-        <nav className="flex-1 px-6" aria-label="Main navigation">
-          {menuItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = getActiveItem() === item.id;
+          <nav className="flex-1 px-6" aria-label="Main navigation">
+            {menuItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = getActiveItem() === item.id;
 
-            if (item.type === "page") {
+              if (item.type === "page") {
+                return (
+                  <Link
+                    key={item.id}
+                    href={item.href}
+                    onClick={() => {
+                      setActiveSection(item.id);
+                      setMobileMenuOpen(false);
+                    }}
+                    className={cn(
+                      "w-full flex items-center gap-4 px-4 py-3 rounded-lg mb-2 transition-colors",
+                      isActive
+                        ? "bg-zinc-900/90 text-white ring-1 ring-white/10"
+                        : "text-zinc-400 hover:bg-zinc-900/50 hover:text-white",
+                    )}
+                    aria-current={isActive ? "page" : undefined}
+                  >
+                    <Icon size={20} />
+                    <span className="text-base">{item.label}</span>
+                  </Link>
+                );
+              }
+
               return (
-                <Link
+                <button
                   key={item.id}
-                  href={item.href}
-                  onClick={() => {
-                    setActiveSection(item.id);
-                    setMobileMenuOpen(false);
-                  }}
+                  onClick={() => handleScrollClick(item)}
                   className={cn(
                     "w-full flex items-center gap-4 px-4 py-3 rounded-lg mb-2 transition-colors",
                     isActive
                       ? "bg-zinc-900/90 text-white ring-1 ring-white/10"
                       : "text-zinc-400 hover:bg-zinc-900/50 hover:text-white",
                   )}
-                  aria-current={isActive ? "page" : undefined}
+                  aria-label={`Navigate to ${item.label}`}
                 >
                   <Icon size={20} />
                   <span className="text-base">{item.label}</span>
-                </Link>
+                </button>
               );
-            }
+            })}
+          </nav>
 
-            return (
-              <button
-                key={item.id}
-                onClick={() => handleScrollClick(item)}
-                className={cn(
-                  "w-full flex items-center gap-4 px-4 py-3 rounded-lg mb-2 transition-colors",
-                  isActive
-                    ? "bg-zinc-900/90 text-white ring-1 ring-white/10"
-                    : "text-zinc-400 hover:bg-zinc-900/50 hover:text-white",
-                )}
-                aria-label={`Navigate to ${item.label}`}
-              >
-                <Icon size={20} />
-                <span className="text-base">{item.label}</span>
-              </button>
-            );
-          })}
-        </nav>
-
-        <div className="flex justify-center gap-4 py-6 px-6">
-          {socialIcons.map((social) => {
-            const Icon = social.icon;
-            return (
-              <a
-                key={social.name}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-lg bg-zinc-950/80 ring-1 ring-white/5 hover:bg-zinc-900/80 transition-colors"
-                aria-label={social.name}
-              >
-                <Icon size={18} />
-              </a>
-            );
-          })}
-        </div>
+          <div className="flex justify-center gap-4 py-6 px-6">
+            {socialIcons.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 flex items-center justify-center rounded-lg bg-zinc-950/80 ring-1 ring-white/5 hover:bg-zinc-900/80 transition-colors"
+                  aria-label={social.name}
+                >
+                  <Icon size={18} />
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>
