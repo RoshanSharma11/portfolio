@@ -1,11 +1,13 @@
 import { LucideIcon } from "lucide-react";
 import { cn } from "@/libs/utils";
+import ExpandableDescription from "@/components/ExpandableDescription";
 
 interface TimelineItem {
   title: string;
   highlight: string;
   highlightColor: string;
   description: string;
+  detailedDescription?: string;
   date?: string;
   isActive?: boolean;
 }
@@ -58,7 +60,14 @@ export default function TimelineSection({ title, items, icon: Icon }: TimelineSe
                   <h4 className="text-lg sm:text-lg font-medium text-white mb-1.5">
                     {item.title} - <span className={item.highlightColor}>{item.highlight}</span>
                   </h4>
-                  <p className="text-zinc-400 text-sm sm:text-base">{item.description}</p>
+                  {item.detailedDescription ? (
+                    <ExpandableDescription
+                      description={item.description}
+                      detailedDescription={item.detailedDescription}
+                    />
+                  ) : (
+                    <p className="text-zinc-400 text-sm sm:text-base">{item.description}</p>
+                  )}
                 </div>
                 {item.date && (
                   <div className="text-zinc-500 text-sm sm:text-base whitespace-nowrap sm:text-right">
