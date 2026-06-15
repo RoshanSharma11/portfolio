@@ -72,8 +72,8 @@ export default function ProjectModal({
               src={project.image}
               alt={`${project.title} preview`}
               fill
+              sizes="(max-width: 672px) 100vw, 672px"
               className="object-cover opacity-70"
-              priority
             />
             <div className="absolute inset-0 bg-linear-to-t from-zinc-950/80 to-transparent" />
           </div>

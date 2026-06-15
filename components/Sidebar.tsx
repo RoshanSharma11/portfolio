@@ -14,6 +14,7 @@ import {
   Menu,
   X,
   FileText,
+  Wrench,
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
@@ -26,50 +27,53 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   const menuItems = [
-    { id: "home", icon: Home, label: "Home", href: "/", type: "page" },
-    { id: "about", icon: User, label: "About", href: "/about", type: "page" },
+    { id: "home", icon: Home, label: "Home", href: "/", type: "page" as const },
+    { id: "about", icon: User, label: "About", href: "/about", type: "page" as const },
+    {
+      id: "services",
+      icon: Wrench,
+      label: "Services",
+      href: "/services",
+      type: "page" as const,
+    },
     {
       id: "projects",
       icon: Briefcase,
       label: "Projects",
       href: "/projects",
-      type: "page",
+      type: "page" as const,
     },
     {
       id: "skills",
       icon: Star,
       label: "Skills",
       href: "/#skills",
-      type: "scroll",
+      type: "scroll" as const,
     },
     {
       id: "contact",
       icon: Mail,
       label: "Contact",
-      href: "/#contact",
-      type: "scroll",
+      href: "/contact",
+      type: "page" as const,
     },
   ];
 
   const getActiveItem = () => {
     if (pathname === "/about") return "about";
-    if (pathname === "/projects") return "projects";
+    if (pathname === "/services") return "services";
+    if (pathname.startsWith("/projects")) return "projects";
+    if (pathname === "/contact") return "contact";
+    if (pathname === "/faq") return "contact";
     return activeSection;
   };
 
-  const handleNavClick = (item: (typeof menuItems)[0]) => {
-    if (item.type === "page") {
-      setActiveSection(item.id);
+  const handleScrollClick = (item: (typeof menuItems)[number]) => {
+    if (pathname !== "/") {
       router.push(item.href);
-    } else if (item.type === "scroll") {
-      if (pathname !== "/") {
-        router.push(item.href);
-      } else {
-        setActiveSection(item.id);
-        document
-          .getElementById(item.id)
-          ?.scrollIntoView({ behavior: "smooth" });
-      }
+    } else {
+      setActiveSection(item.id);
+      document.getElementById(item.id)?.scrollIntoView({ behavior: "smooth" });
     }
     setMobileMenuOpen(false);
   };
@@ -91,10 +95,9 @@ export default function Sidebar() {
 
   return (
     <>
-      {/* Mobile Menu Button */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-zinc-900 rounded-lg text-white"
+        className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-[var(--sidebar)] backdrop-blur-md border border-white/5 rounded-lg text-zinc-300"
         aria-label={
           mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"
         }
@@ -103,7 +106,6 @@ export default function Sidebar() {
         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Overlay for mobile */}
       {mobileMenuOpen && (
         <div
           className="lg:hidden fixed inset-0 bg-black/50 z-40"
@@ -111,26 +113,30 @@ export default function Sidebar() {
         />
       )}
 
-      {/* Sidebar */}
       <div
         className={cn(
-          "w-[270px] h-screen bg-black border-r border-zinc-800 flex flex-col fixed left-0 top-0 z-40 transition-transform duration-300",
+          "w-[270px] h-screen sidebar-panel fixed left-0 top-0 z-40 transition-transform duration-300",
           mobileMenuOpen
             ? "translate-x-0"
             : "-translate-x-full lg:translate-x-0",
         )}
       >
-        {/* Profile Section */}
+        <div className="sidebar-tone absolute inset-0 pointer-events-none" aria-hidden="true" />
+        <div className="sidebar-grain-coarse absolute inset-0 pointer-events-none" aria-hidden="true" />
+        <div className="sidebar-grain-fine absolute inset-0 pointer-events-none" aria-hidden="true" />
+
+        <div className="relative z-10 flex flex-col h-full">
         <div className="flex flex-col items-center pt-12 pb-6 px-6">
-          <div className="w-44 h-44 rounded-lg overflow-hidden mb-4 bg-zinc-800">
+          <Link href="/" className="relative w-44 h-44 rounded-lg overflow-hidden mb-4 bg-zinc-900/60 ring-1 ring-white/10">
             <Image
               src="/profile.jpeg"
               alt="Roshan Sharma - Full Stack Software Engineer profile picture"
-              width={176}
-              height={176}
-              className="object-cover "
+              fill
+              sizes="176px"
+              priority
+              className="object-cover"
             />
-          </div>
+          </Link>
           <div className="flex items-center gap-2 px-4 py-2 bg-green-500/10 rounded-full">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
             <span className="text-green-500 text-sm font-medium">
@@ -139,23 +145,45 @@ export default function Sidebar() {
           </div>
         </div>
 
-        {/* Navigation */}
-        <nav className="flex-1 px-6">
+        <nav className="flex-1 px-6" aria-label="Main navigation">
           {menuItems.map((item) => {
             const Icon = item.icon;
+            const isActive = getActiveItem() === item.id;
+
+            if (item.type === "page") {
+              return (
+                <Link
+                  key={item.id}
+                  href={item.href}
+                  onClick={() => {
+                    setActiveSection(item.id);
+                    setMobileMenuOpen(false);
+                  }}
+                  className={cn(
+                    "w-full flex items-center gap-4 px-4 py-3 rounded-lg mb-2 transition-colors",
+                    isActive
+                      ? "bg-zinc-900/90 text-white ring-1 ring-white/10"
+                      : "text-zinc-400 hover:bg-zinc-900/50 hover:text-white",
+                  )}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  <Icon size={20} />
+                  <span className="text-base">{item.label}</span>
+                </Link>
+              );
+            }
 
             return (
               <button
                 key={item.id}
-                onClick={() => handleNavClick(item)}
+                onClick={() => handleScrollClick(item)}
                 className={cn(
                   "w-full flex items-center gap-4 px-4 py-3 rounded-lg mb-2 transition-colors",
-                  getActiveItem() === item.id
-                    ? "bg-zinc-800 text-white"
-                    : "text-zinc-400 hover:bg-zinc-900 hover:text-white",
+                  isActive
+                    ? "bg-zinc-900/90 text-white ring-1 ring-white/10"
+                    : "text-zinc-400 hover:bg-zinc-900/50 hover:text-white",
                 )}
-                aria-label={`Navigate to ${item.label} page`}
-                aria-current={getActiveItem() === item.id ? "page" : undefined}
+                aria-label={`Navigate to ${item.label}`}
               >
                 <Icon size={20} />
                 <span className="text-base">{item.label}</span>
@@ -164,7 +192,6 @@ export default function Sidebar() {
           })}
         </nav>
 
-        {/* Social Icons */}
         <div className="flex justify-center gap-4 py-6 px-6">
           {socialIcons.map((social) => {
             const Icon = social.icon;
@@ -174,13 +201,14 @@ export default function Sidebar() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 flex items-center justify-center rounded-lg bg-zinc-900 hover:bg-zinc-800 transition-colors"
+                className="w-10 h-10 flex items-center justify-center rounded-lg bg-zinc-950/80 ring-1 ring-white/5 hover:bg-zinc-900/80 transition-colors"
                 aria-label={social.name}
               >
                 <Icon size={18} />
               </a>
             );
           })}
+        </div>
         </div>
       </div>
     </>

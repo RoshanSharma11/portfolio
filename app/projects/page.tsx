@@ -1,23 +1,65 @@
-import Sidebar from "@/components/Sidebar";
-import ProjectsGrid from "@/components/ProjectsGrid";
+import { Metadata } from "next";
+import PageShell from "@/components/PageShell";
+import Breadcrumbs from "@/components/Breadcrumbs";
+import JsonLd from "@/components/JsonLd";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
+import ProjectsScroll from "@/components/ProjectsScroll";
+import ProjectsCta from "@/components/ProjectsCta";
+import { projects } from "@/constants/projects";
+import { breadcrumbSchema } from "@/libs/structured-data";
 
-export default function Projects() {
+export const metadata: Metadata = {
+  title: "Projects — Full-Stack, Backend & Systems Engineering",
+  description:
+    "Explore software engineering projects by Roshan Sharma — high-performance backends, full-stack platforms, real-time collaboration tools, and scalable system design.",
+  keywords: [
+    "Roshan Sharma Projects",
+    "Full Stack Developer Portfolio",
+    "Backend Engineering Projects",
+    "System Design Projects",
+    "Software Engineering Case Studies",
+    "React Next.js Projects",
+  ],
+  alternates: {
+    canonical: "https://roshansharma.net/projects",
+  },
+  openGraph: {
+    title: "Projects — Roshan Sharma",
+    description:
+      "A collection of full-stack, backend, and systems engineering projects showcasing production-ready software.",
+    url: "https://roshansharma.net/projects",
+  },
+};
+
+const breadcrumbs = [{ label: "Home", href: "/" }, { label: "Projects" }];
+
+export default function ProjectsPage() {
   return (
-    <div className="flex min-h-screen bg-black">
-      <Sidebar />
-      
-      <main className="ml-0 lg:ml-[270px] flex-1 text-white">
-        <section id="projects" className="min-h-screen px-4 sm:px-8 lg:px-16 py-12 sm:py-20">
-          <div className="mb-12 sm:mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-semibold mb-4">My Remarkable Projects</h2>
-            <p className="text-zinc-400 text-lg max-w-3xl">
-              A collection of projects showcasing my expertise in full-stack development, system design, and building scalable applications.
-            </p>
-          </div>
+    <PageShell>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", url: "https://roshansharma.net" },
+          { name: "Projects", url: "https://roshansharma.net/projects" },
+        ])}
+      />
+      <section className="min-h-screen px-4 sm:px-8 lg:px-16 py-12 sm:py-20">
+        <Breadcrumbs items={breadcrumbs} />
+        <h1 className="animate-hero text-3xl sm:text-4xl lg:text-[42px] font-semibold mb-4 tracking-tight">
+          Projects by Roshan Sharma
+        </h1>
+        <p className="animate-hero animate-hero-delay-1 text-zinc-400 text-base sm:text-lg max-w-3xl leading-relaxed mb-4">
+          A collection of projects showcasing expertise in full-stack development,
+          system design, and building scalable applications.
+        </p>
+        <p className="animate-hero animate-hero-delay-2 mb-12 text-sm text-zinc-600">
+          {projects.length} projects · scroll to explore
+        </p>
 
-          <ProjectsGrid />
-        </section>
-      </main>
-    </div>
+        <AnimateOnScroll>
+          <ProjectsScroll />
+        </AnimateOnScroll>
+        <ProjectsCta />
+      </section>
+    </PageShell>
   );
 }

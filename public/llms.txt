@@ -1,0 +1,43 @@
+# Roshan Sharma — Full Stack Software Engineer
+
+> Portfolio and professional site for Roshan Sharma, a full-stack software engineer based in India, available for remote and freelance software engineering work worldwide.
+
+## About
+
+Roshan Sharma builds production-ready web platforms, backend services, mobile applications, and performance-critical systems. Specializations include Python, TypeScript, Go, Node.js, React, Next.js, system design, and scalable backend architecture.
+
+## Key Pages
+
+- Home: https://roshansharma.net/
+- About: https://roshansharma.net/about
+- Services: https://roshansharma.net/services
+- Projects: https://roshansharma.net/projects
+- FAQ: https://roshansharma.net/faq
+- Contact: https://roshansharma.net/contact
+- Resume: https://roshansharma.net/resume-v2.pdf
+
+## Services
+
+- Full-stack web platform development (Next.js, React, Node.js)
+- Backend and API development (Python, Go, Node.js)
+- Mobile app development (React Native, Firebase, Supabase)
+- System design and scalable architecture
+
+## Notable Projects
+
+- Matchloop — high-performance matching engine (Go): https://roshansharma.net/projects/matchloop
+- Storm — real-time collaborative brainstorming (Next.js): https://roshansharma.net/projects/storm
+- ASR Interior — multi-role e-commerce platform: https://roshansharma.net/projects/asr-interior
+- Recall.Ai — AI chat summarization Chrome extension: https://roshansharma.net/projects/recall-ai
+- Scalable Leaderboard System (Go): https://roshansharma.net/projects/scalable-leaderboard
+
+## Contact
+
+- Contact form: https://roshansharma.net/contact
+- LinkedIn: https://www.linkedin.com/in/theroshansharma
+- GitHub: https://github.com/RoshanSharma11
+- X: https://x.com/RoshanS25033
+
+## Availability
+
+Open to remote software engineering roles, freelance projects, and contract work. Based in India (IST), working with global teams.

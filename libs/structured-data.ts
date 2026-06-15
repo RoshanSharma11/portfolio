@@ -1,92 +1,108 @@
-// JSON-LD Structured Data for SEO
-// This provides rich snippets for search engines
+import type { Project } from "@/constants/projects";
+import type { FaqItem } from "@/constants/faq";
+
+const baseUrl = "https://roshansharma.net";
 
 export const personSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Roshan Sharma',
-  jobTitle: 'Full Stack Software Engineer',
-  url: 'https://roshansharma.net',
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Roshan Sharma",
+  jobTitle: "Full Stack Software Engineer",
+  url: baseUrl,
   sameAs: [
-    'https://github.com/RoshanSharma11',
-    'https://linkedin.com/in/theroshansharma',
-    'https://x.com/RoshanS25033',
+    "https://github.com/RoshanSharma11",
+    "https://www.linkedin.com/in/theroshansharma",
+    "https://x.com/RoshanS25033",
+    "https://www.instagram.com/roshansharma_11/",
   ],
-  image: 'https://roshansharma.net/profile.jpeg',
-  description: 'Full Stack Software Engineer specializing in scalable backend architecture, system design, and production-ready web platforms.',
+  image: `${baseUrl}/profile.jpeg`,
+  description:
+    "Full Stack Software Engineer specializing in scalable backend architecture, system design, and production-ready web platforms. Available for remote and freelance software engineering work.",
   knowsAbout: [
-    'Full Stack Development',
-    'Backend Architecture',
-    'System Design',
-    'Python',
-    'TypeScript',
-    'Node.js',
-    'React',
-    'Next.js',
-    'Distributed Systems',
-    'Database Design',
-    'API Development',
+    "Full Stack Development",
+    "Backend Architecture",
+    "System Design",
+    "Freelance Software Engineering",
+    "Python",
+    "TypeScript",
+    "Go",
+    "Node.js",
+    "React",
+    "Next.js",
+    "Distributed Systems",
+    "Database Design",
+    "API Development",
+    "Mobile App Development",
   ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "professional inquiries",
+    url: `${baseUrl}/contact`,
+    availableLanguage: ["English"],
+  },
 };
 
 export const websiteSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Roshan Sharma Portfolio',
-  url: 'https://roshansharma.net',
-  description: 'Professional portfolio of Roshan Sharma - Full Stack Software Engineer',
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Roshan Sharma — Software Engineer",
+  url: baseUrl,
+  description:
+    "Portfolio and services of Roshan Sharma, Full Stack Software Engineer available for hire and freelance work.",
   author: {
-    '@type': 'Person',
-    name: 'Roshan Sharma',
+    "@type": "Person",
+    name: "Roshan Sharma",
+  },
+  publisher: {
+    "@type": "Person",
+    name: "Roshan Sharma",
   },
 };
 
 export const professionalServiceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'Roshan Sharma - Software Development Services',
-  description: 'Full Stack Software Development, Backend Architecture, System Design, and Web Platform Development Services',
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Roshan Sharma — Software Engineering Services",
+  url: `${baseUrl}/services`,
+  description:
+    "Full-stack software engineering, backend architecture, API development, mobile apps, and system design. Remote and freelance engagements worldwide.",
   provider: {
-    '@type': 'Person',
-    name: 'Roshan Sharma',
-    jobTitle: 'Full Stack Software Engineer',
+    "@type": "Person",
+    name: "Roshan Sharma",
+    jobTitle: "Full Stack Software Engineer",
+    url: baseUrl,
   },
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Remote',
-    addressCountry: 'Worldwide',
-  },
-  areaServed: 'Worldwide',
+  areaServed: "Worldwide",
   hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Software Development Services',
+    "@type": "OfferCatalog",
+    name: "Software Engineering Services",
     itemListElement: [
       {
-        '@type': 'Offer',
+        "@type": "Offer",
         itemOffered: {
-          '@type': 'Service',
-          name: 'Full Stack Development',
+          "@type": "Service",
+          name: "Full-Stack Web Platform Development",
         },
       },
       {
-        '@type': 'Offer',
+        "@type": "Offer",
         itemOffered: {
-          '@type': 'Service',
-          name: 'Backend Architecture',
+          "@type": "Service",
+          name: "Backend & API Development",
         },
       },
       {
-        '@type': 'Offer',
+        "@type": "Offer",
         itemOffered: {
-          '@type': 'Service',
-          name: 'System Design',
+          "@type": "Service",
+          name: "Mobile Application Development",
         },
       },
       {
-        '@type': 'Offer',
+        "@type": "Offer",
         itemOffered: {
-          '@type': 'Service',
-          name: 'API Development',
+          "@type": "Service",
+          name: "System Design & Architecture",
         },
       },
     ],
@@ -94,12 +110,43 @@ export const professionalServiceSchema = {
 };
 
 export const breadcrumbSchema = (items: { name: string; url: string }[]) => ({
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
   itemListElement: items.map((item, index) => ({
-    '@type': 'ListItem',
+    "@type": "ListItem",
     position: index + 1,
     name: item.name,
     item: item.url,
   })),
+});
+
+export const faqSchema = (items: FaqItem[]) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: items.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+});
+
+export const projectSchema = (project: Project) => ({
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  name: project.title,
+  description: project.longDescription,
+  url: `${baseUrl}/projects/${project.id}`,
+  image: project.image.startsWith("http")
+    ? project.image
+    : `${baseUrl}${project.image}`,
+  author: {
+    "@type": "Person",
+    name: "Roshan Sharma",
+    url: baseUrl,
+  },
+  keywords: project.techStack.join(", "),
+  ...(project.repository && { codeRepository: project.repository }),
 });

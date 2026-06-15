@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { personSchema, websiteSchema, professionalServiceSchema } from "@/libs/structured-data";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import SiteBackground from "@/components/SiteBackground";
 
 const inter = Inter({
   weight: ["400", "500", "600", "700"],
@@ -16,14 +17,16 @@ export const metadata: Metadata = {
     default: 'Roshan Sharma - Full Stack Software Engineer | Hire Expert Developer',
     template: '%s | Roshan Sharma',
   },
-  description: 'Roshan Sharma - Full Stack Software Engineer specializing in scalable backend architecture, system design, and production-ready web platforms. Expert in Python, TypeScript, Go, Node.js, React, Next.js, and distributed systems. Available for hire.',
+  description: 'Roshan Sharma — Full Stack Software Engineer specializing in scalable backend architecture, system design, and production-ready web platforms. Expert in Python, TypeScript, Go, Node.js, React, and Next.js. Available for remote and freelance software engineering work.',
   keywords: [
     'Roshan Sharma',
     'Full Stack Developer',
     'Software Engineer',
+    'Freelance Software Engineer',
     'Backend Developer',
     'Frontend Developer',
     'Hire Full Stack Developer',
+    'Remote Software Engineer',
     'Python Developer',
     'TypeScript Developer',
     'Node.js Developer',
@@ -52,7 +55,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://roshansharma.net',
     title: 'Roshan Sharma - Full Stack Software Engineer | Hire Expert Developer',
-    description: 'Full Stack Software Engineer specializing in scalable backend architecture, system design, and production-ready web platforms. Available for hire.',
+    description: 'Full Stack Software Engineer specializing in scalable backend architecture, system design, and production-ready web platforms. Available for remote and freelance work.',
     siteName: 'Roshan Sharma Portfolio',
     images: [
       {
@@ -66,7 +69,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Roshan Sharma - Full Stack Software Engineer | Hire Expert Developer',
-    description: 'Full Stack Software Engineer specializing in scalable backend architecture, system design, and production-ready web platforms. Available for hire.',
+    description: 'Full Stack Software Engineer specializing in scalable backend architecture, system design, and production-ready web platforms. Available for remote and freelance work.',
     creator: '@RoshanS25033',
     images: ['/og-image.png'],
   },
@@ -89,7 +92,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <head>
         {/* JSON-LD Structured Data */}
         <script
@@ -108,7 +111,10 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-inter antialiased`}
       >
-        {children}
+        <SiteBackground />
+        <div className="relative z-10">
+          {children}
+        </div>
         <Analytics />
       </body>
     </html>

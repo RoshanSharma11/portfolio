@@ -1,7 +1,8 @@
 import Sidebar from "@/components/Sidebar";
 import TimelineSection from "@/components/TimelineSection";
-import { MapPin, GraduationCap, Briefcase } from "lucide-react";
-import ParticlesBackground from "@/components/ParticlesBackground";
+import SiteFooter from "@/components/SiteFooter";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
+import { Briefcase, GraduationCap } from "lucide-react";
 import { experienceData, educationData } from "@/constants/about";
 import { Metadata } from "next";
 
@@ -29,19 +30,18 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="flex min-h-screen bg-black">
-      {/* <ParticlesBackground /> */}
+    <div className="flex min-h-screen">
       <Sidebar />
 
-      <main className="ml-0 lg:ml-[270px] flex-1 text-white">
+      <main className="ml-0 lg:ml-[270px] flex-1 text-white flex flex-col">
         <section
           id="about"
           className="min-h-screen px-4 sm:px-8 lg:px-16 py-12 sm:py-20"
         >
-          <h2 className="text-3xl sm:text-4xl font-semibold mb-8 sm:mb-12">
-            Get to Know Me
-          </h2>
-          <p className="text-base sm:text-lg  text-zinc-400 leading-relaxed mb-8 sm:mb-12 max-w-4xl">
+          <h1 className="animate-hero text-3xl sm:text-4xl font-semibold mb-8 sm:mb-12">
+            About Roshan Sharma
+          </h1>
+          <p className="animate-hero animate-hero-delay-1 text-base sm:text-lg text-zinc-400 leading-relaxed mb-8 sm:mb-12 max-w-4xl">
             I'm a full-stack software engineer with a strong focus on system
             design, scalable backend architecture, and building production-ready
             web platforms.
@@ -73,22 +73,25 @@ export default function About() {
             📍 Based in India — open to remote and global software engineering
             opportunities.
           </p>
-          <div className="flex items-center gap-8 mb-16">
-            <div className="flex-1 h-px bg-linear-to-r from-zinc-800 to-transparent"></div>
-          </div>
+          <AnimateOnScroll>
+            <div className="flex items-center gap-8 mb-16">
+              <div className="flex-1 h-px bg-linear-to-r from-zinc-800 to-transparent" />
+            </div>
+          </AnimateOnScroll>
 
-          <TimelineSection 
-            title="Experience" 
-            items={experienceData} 
+          <TimelineSection
+            title="Experience"
+            items={experienceData}
             icon={Briefcase}
           />
 
-          <TimelineSection 
-            title="Education" 
-            items={educationData} 
+          <TimelineSection
+            title="Education"
+            items={educationData}
             icon={GraduationCap}
           />
         </section>
+        <SiteFooter />
       </main>
     </div>
   );
