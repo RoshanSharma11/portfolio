@@ -35,13 +35,13 @@ export default function Sidebar() {
       href: "/about",
       type: "page" as const,
     },
-    {
-      id: "services",
-      icon: Wrench,
-      label: "Services",
-      href: "/services",
-      type: "page" as const,
-    },
+    // {
+    //   id: "services",
+    //   icon: Wrench,
+    //   label: "Services",
+    //   href: "/services",
+    //   type: "page" as const,
+    // },
     {
       id: "projects",
       icon: Briefcase,
