@@ -7,7 +7,7 @@ export const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Roshan Sharma",
-  jobTitle: "Full Stack Software Engineer",
+  jobTitle: "Software Developer",
   url: baseUrl,
   sameAs: [
     "https://github.com/RoshanSharma11",
@@ -17,9 +17,9 @@ export const personSchema = {
   ],
   image: `${baseUrl}/profile.jpeg`,
   description:
-    "Full Stack Software Engineer specializing in scalable backend architecture, system design, and production-ready web platforms. Available for remote and freelance software engineering work.",
+    "Software Developer specializing in scalable backend architecture, system design, and production-ready web platforms. Available for remote and freelance software engineering work.",
   knowsAbout: [
-    "Full Stack Development",
+    "Software Development",
     "Backend Architecture",
     "System Design",
     "Freelance Software Engineering",
@@ -48,7 +48,7 @@ export const websiteSchema = {
   name: "Roshan Sharma — Software Engineer",
   url: baseUrl,
   description:
-    "Portfolio and services of Roshan Sharma, Full Stack Software Engineer available for hire and freelance work.",
+    "Portfolio and services of Roshan Sharma, Software Developer available for hire and freelance work.",
   author: {
     "@type": "Person",
     name: "Roshan Sharma",
@@ -65,11 +65,11 @@ export const professionalServiceSchema = {
   name: "Roshan Sharma — Software Engineering Services",
   url: `${baseUrl}/services`,
   description:
-    "Full-stack software engineering, backend architecture, API development, mobile apps, and system design. Remote and freelance engagements worldwide.",
+    "Software engineering, backend architecture, API development, mobile apps, and system design. Remote and freelance engagements worldwide.",
   provider: {
     "@type": "Person",
     name: "Roshan Sharma",
-    jobTitle: "Full Stack Software Engineer",
+    jobTitle: "Software Developer",
     url: baseUrl,
   },
   areaServed: "Worldwide",

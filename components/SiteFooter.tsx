@@ -28,8 +28,8 @@ export default function SiteFooter() {
         </ul>
       </nav>
       <p className="mt-4 text-xs text-zinc-600">
-        © {new Date().getFullYear()} Roshan Sharma — Full Stack Software
-        Engineer. Available for remote and freelance work.
+        © {new Date().getFullYear()} Roshan Sharma — Software Developer.
+        Available for remote and freelance work.
       </p>
     </footer>
   );

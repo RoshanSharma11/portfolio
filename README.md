@@ -1,6 +1,6 @@
 # Roshan Sharma - Portfolio
 
-A modern, responsive portfolio website built with Next.js 16, showcasing my projects, skills, and professional experience as a Full Stack Software Engineer.
+A modern, responsive portfolio website built with Next.js 16, showcasing my projects, skills, and professional experience as a Software Developer.
 
 ## Tech Stack
 

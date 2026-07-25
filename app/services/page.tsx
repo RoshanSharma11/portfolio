@@ -10,12 +10,12 @@ import { services } from "@/constants/services";
 import { breadcrumbSchema } from "@/libs/structured-data";
 
 export const metadata: Metadata = {
-  title: "Software Engineering Services - Full Stack, Backend & Mobile",
+  title: "Software Engineering Services - Web, Backend & Mobile",
   description:
-    "Hire Roshan Sharma for full-stack web development, backend APIs, mobile apps, and system design. Remote software engineer available for freelance and contract work.",
+    "Hire Roshan Sharma for web development, backend APIs, mobile apps, and system design. Remote software developer available for freelance and contract work.",
   keywords: [
     "Software Engineering Services",
-    "Hire Full Stack Developer",
+    "Hire Software Developer",
     "Freelance Software Engineer",
     "Remote Software Developer",
     "Backend Developer for Hire",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Software Engineering Services — Roshan Sharma",
     description:
-      "Full-stack web platforms, backend APIs, mobile apps, and system design. Remote and freelance software engineering.",
+      "Web platforms, backend APIs, mobile apps, and system design. Remote and freelance software engineering.",
     url: "https://roshansharma.net/services",
   },
 };

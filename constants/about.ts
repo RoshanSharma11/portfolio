@@ -10,7 +10,7 @@ export interface TimelineItem {
 
 export const experienceData: TimelineItem[] = [
   {
-    title: "Mobile App Developer",
+    title: "SDE Intern",
     highlight: "GenZFit",
     highlightColor: "text-zinc-300",
     description:
@@ -20,7 +20,7 @@ export const experienceData: TimelineItem[] = [
     date: "Sep 2025 - Feb 2026",
   },
   {
-    title: "Full Stack Developer",
+    title: "Software Developer",
     highlight: "ToolSnitch",
     highlightColor: "text-zinc-300",
     description:

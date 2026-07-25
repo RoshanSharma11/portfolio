@@ -7,11 +7,11 @@ import { experienceData, educationData } from "@/constants/about";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'About Roshan Sharma - Full Stack Developer Experience & Background',
-  description: 'Learn about Roshan Sharma - Full Stack Software Engineer with expertise in system design, scalable backend architecture, and production-ready web platforms. View experience, education, and technical background.',
+  title: 'About Roshan Sharma - Software Developer Experience & Background',
+  description: 'Learn about Roshan Sharma - Software Developer with expertise in system design, scalable backend architecture, and production-ready web platforms. View experience, education, and technical background.',
   keywords: [
     'About Roshan Sharma',
-    'Full Stack Developer Bio',
+    'Software Developer Bio',
     'Software Engineer Experience',
     'Backend Developer Background',
     'System Design Expert',
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     canonical: 'https://roshansharma.net/about',
   },
   openGraph: {
-    title: 'About Roshan Sharma - Full Stack Developer Experience & Background',
-    description: 'Learn about Roshan Sharma - Full Stack Software Engineer with expertise in system design, scalable backend architecture, and production-ready web platforms.',
+    title: 'About Roshan Sharma - Software Developer Experience & Background',
+    description: 'Learn about Roshan Sharma - Software Developer with expertise in system design, scalable backend architecture, and production-ready web platforms.',
     url: 'https://roshansharma.net/about',
   },
 };
@@ -42,7 +42,7 @@ export default function About() {
             About Roshan Sharma
           </h1>
           <p className="animate-hero animate-hero-delay-1 text-base sm:text-lg text-zinc-400 leading-relaxed mb-8 sm:mb-12 max-w-4xl">
-            I'm a full-stack software engineer with a strong focus on system
+            I'm a software developer with a strong focus on system
             design, scalable backend architecture, and building production-ready
             web platforms.
             <br />

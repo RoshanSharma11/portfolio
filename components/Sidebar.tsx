@@ -148,7 +148,7 @@ export default function Sidebar() {
             >
               <Image
                 src="/profile.jpeg"
-                alt="Roshan Sharma - Full Stack Software Engineer profile picture"
+                alt="Roshan Sharma - Software Developer profile picture"
                 fill
                 sizes="176px"
                 priority

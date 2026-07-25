@@ -11,7 +11,7 @@ export default function HeroSection() {
           Hello Everyone! I&apos;m Roshan Sharma.
         </h1>
         <p className="animate-hero animate-hero-delay-1 text-base sm:text-lg text-zinc-400 leading-relaxed mb-4 max-w-3xl">
-          I&apos;m a full-stack software engineer focused on building scalable
+          I&apos;m a software developer focused on building scalable
           systems and high-performance web platforms. I enjoy designing clean
           architectures, reliable backends, and intuitive products that can grow
           from early prototypes to production-scale systems.

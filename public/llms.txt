@@ -1,6 +1,6 @@
-# Roshan Sharma — Full Stack Software Engineer
+# Roshan Sharma — Software Developer
 
-> Portfolio and professional site for Roshan Sharma, a full-stack software engineer based in India, available for remote and freelance software engineering work worldwide.
+> Portfolio and professional site for Roshan Sharma, a software developer based in India, available for remote and freelance software engineering work worldwide.
 
 ## About
 

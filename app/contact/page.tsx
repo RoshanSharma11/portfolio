@@ -67,7 +67,7 @@ export default function ContactPage() {
                 Contact Roshan Sharma
               </h1>
               <p className="animate-hero animate-hero-delay-1 text-zinc-400 text-base sm:text-lg leading-relaxed">
-                Whether you need a full-stack engineer for a product build, backend
+                Whether you need a software developer for a product build, backend
                 architecture help, or a freelance contract — send a message and
                 I&apos;ll respond within 1–2 business days.
               </p>

@@ -9,12 +9,12 @@ import { projects } from "@/constants/projects";
 import { breadcrumbSchema } from "@/libs/structured-data";
 
 export const metadata: Metadata = {
-  title: "Projects — Full-Stack, Backend & Systems Engineering",
+  title: "Projects — Software Development, Backend & Systems Engineering",
   description:
-    "Explore software engineering projects by Roshan Sharma — high-performance backends, full-stack platforms, real-time collaboration tools, and scalable system design.",
+    "Explore software engineering projects by Roshan Sharma — high-performance backends, web platforms, real-time collaboration tools, and scalable system design.",
   keywords: [
     "Roshan Sharma Projects",
-    "Full Stack Developer Portfolio",
+    "Software Developer Portfolio",
     "Backend Engineering Projects",
     "System Design Projects",
     "Software Engineering Case Studies",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Projects — Roshan Sharma",
     description:
-      "A collection of full-stack, backend, and systems engineering projects showcasing production-ready software.",
+      "A collection of software development, backend, and systems engineering projects showcasing production-ready software.",
     url: "https://roshansharma.net/projects",
   },
 };
@@ -48,7 +48,7 @@ export default function ProjectsPage() {
           Projects by Roshan Sharma
         </h1>
         <p className="animate-hero animate-hero-delay-1 text-zinc-400 text-base sm:text-lg max-w-3xl leading-relaxed mb-4">
-          A collection of projects showcasing expertise in full-stack development,
+          A collection of projects showcasing expertise in software development,
           system design, and building scalable applications.
         </p>
         <p className="animate-hero animate-hero-delay-2 mb-12 text-sm text-zinc-600">
