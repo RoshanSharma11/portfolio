@@ -1,11 +1,13 @@
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, ArrowUpRight, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Github } from "lucide-react";
 import type { Project } from "@/constants/projects";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import ProjectLiveLink from "@/components/ProjectLiveLink";
 import { getShortName } from "@/libs/project-themes";
 import { getAdjacentProjects } from "@/libs/projects";
+import { hasLiveLink } from "@/libs/project-links";
 import ProjectsCta from "@/components/ProjectsCta";
 
 interface ProjectCaseStudyProps {
@@ -102,17 +104,7 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
               </div>
 
               <div className="space-y-3 border-t border-zinc-800/60 pt-6">
-                {project.liveLink && (
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-black transition-colors hover:bg-zinc-200"
-                  >
-                    <ExternalLink size={15} />
-                    Live Demo
-                  </a>
-                )}
+                {hasLiveLink(project) && <ProjectLiveLink project={project} />}
                 {project.repository && (
                   <a
                     href={project.repository}

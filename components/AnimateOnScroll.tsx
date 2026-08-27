@@ -38,7 +38,9 @@ export default function AnimateOnScroll({
           setIsVisible(false);
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -48px 0px" }
+      // threshold 0: any visible pixel counts — tall wrappers (e.g. project lists)
+      // can never reach higher ratios like 0.12 when taller than ~8 viewports.
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" }
     );
 
     observer.observe(element);

@@ -1,8 +1,9 @@
 "use client";
 
-import { X, ExternalLink, Github } from "lucide-react";
+import { X, Github } from "lucide-react";
 import Image from "next/image";
 import { Project } from "@/constants/projects";
+import ProjectLiveLink from "@/components/ProjectLiveLink";
 import { useEffect } from "react";
 
 interface ProjectModalProps {
@@ -134,17 +135,7 @@ export default function ProjectModal({
               View Code
             </a>
           )}
-          {project.liveLink && (
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-4 py-2 text-sm border border-zinc-700 rounded-md text-zinc-400 hover:text-blue-400 hover:border-blue-500/40 hover:bg-blue-500/5 transition-all"
-            >
-              <ExternalLink size={13} />
-              Live Demo
-            </a>
-          )}
+          <ProjectLiveLink project={project} variant="button-secondary" />
         </div>
       </div>
     </div>

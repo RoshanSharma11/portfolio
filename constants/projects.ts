@@ -9,9 +9,71 @@ export interface Project {
   techStack: string[];
   repository?: string;
   liveLink?: string;
+  /** Platform-aware store links (iOS → App Store, else → Play Store). */
+  storeLinks?: {
+    ios: string;
+    android: string;
+  };
 }
 
 export const projects: Project[] = [
+  {
+    id: "genzfit",
+    title: "GenZFit — Personalized Fitness & Nutrition App",
+    category: "Mobile / Full-Stack",
+    description:
+      "A production fitness and nutrition app connecting users with certified dietitians, personalized meal plans, and subscription billing.",
+    longDescription:
+      "GenZFit is a personalized health and nutrition companion built to help users lose weight, gain muscle, or maintain a healthier lifestyle with expert support. As an SDE intern, I built backend and mobile workflows across React Native, Firebase, Cloud Functions, and Supabase — covering OTP authentication, real-time chat with dietitians, role-based access for users and experts, personalized diet plans, progress tracking, and subscription lifecycle management via RevenueCat with Firebase webhooks for both the App Store and Play Store.",
+    image: "/projects/genzfit.png",
+    highlights: [
+      "Shipped production mobile workflows for dietitian matching, chat, and plan delivery",
+      "Implemented OTP authentication and role-based access for users and dietitians",
+      "Built real-time chat with photo sharing and subscription-gated expert guidance",
+      "Integrated RevenueCat and Firebase webhooks for App Store and Play Store billing",
+      "Supported personalized diet plans, progress tracking, reminders, and psychologist appointments",
+    ],
+    techStack: [
+      "React Native",
+      "Firebase",
+      "Cloud Functions",
+      "Supabase",
+      "RevenueCat",
+      "TypeScript",
+    ],
+    storeLinks: {
+      ios: "https://apps.apple.com/us/app/genzfit/id6761322807",
+      android: "https://play.google.com/store/apps/details?id=com.genzfit.app",
+    },
+  },
+
+  {
+    id: "toolsnitch",
+    title: "Tool Snitch — Device Repair Marketplace",
+    category: "Full-Stack / Marketplace",
+    description:
+      "A multi-role platform that matches broken devices with nearby repair shops, appointments, carts, and seller workflows.",
+    longDescription:
+      "Tool Snitch helps people with broken smartphones, laptops, and other devices find local repair stores and book fixes in a few steps. As a freelance software developer, I built APIs and backend workflows for seller onboarding, appointments, cart management, invoices, and repair order handling in Node.js, and developed user, seller, and admin panel features in Next.js and Tailwind CSS — including authentication, map-based shop discovery, and multi-role access across the platform.",
+    image: "/projects/toolsnitch.png",
+    highlights: [
+      "Built seller onboarding, appointments, cart, invoice, and repair-order APIs in Node.js",
+      "Developed user, seller, and admin portal features with Next.js and Tailwind CSS",
+      "Implemented authentication and multi-role access across the marketplace",
+      "Integrated map-based shop discovery to match users with nearby repair stores",
+      "Supported end-to-end repair flows from issue intake through booking and order handling",
+    ],
+    techStack: [
+      "Next.js",
+      "React",
+      "Node.js",
+      "Tailwind CSS",
+      "Maps Integration",
+      "TypeScript",
+    ],
+    liveLink: "https://www.toolsnitch.com/",
+  },
+
   {
     id: "matchloop",
     title: "Matchloop – High-Performance Matching Engine",

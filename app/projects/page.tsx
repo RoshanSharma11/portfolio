@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
-import AnimateOnScroll from "@/components/AnimateOnScroll";
 import ProjectsScroll from "@/components/ProjectsScroll";
 import ProjectsCta from "@/components/ProjectsCta";
 import { projects } from "@/constants/projects";
@@ -55,9 +54,7 @@ export default function ProjectsPage() {
           {projects.length} projects · scroll to explore
         </p>
 
-        <AnimateOnScroll>
-          <ProjectsScroll />
-        </AnimateOnScroll>
+        <ProjectsScroll />
         <ProjectsCta />
       </section>
     </PageShell>

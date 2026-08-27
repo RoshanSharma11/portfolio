@@ -7,7 +7,7 @@ import { projects, type Project } from "@/constants/projects";
 import { useScrollSpy } from "@/libs/useScrollSpy";
 import { cn } from "@/libs/utils";
 
-const featuredProjects = [projects[0], projects[2], projects[7]];
+const featuredProjects = [projects[0], projects[1], projects[2]];
 
 function getShortName(title: string) {
   return title.split(/\s[—–-]\s/)[0].trim();

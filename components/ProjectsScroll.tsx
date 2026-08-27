@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ExternalLink, Github } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 import { projects, type Project } from "@/constants/projects";
+import ProjectLiveLink from "@/components/ProjectLiveLink";
 import { getShortName, getTheme } from "@/libs/project-themes";
 import { useScrollSpy } from "@/libs/useScrollSpy";
 import { cn } from "@/libs/utils";
@@ -298,18 +299,11 @@ function ProjectPanel({
             </a>
           )}
 
-          {project.liveLink && (
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-zinc-500 transition-colors hover:text-zinc-300"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <ExternalLink size={14} />
-              Demo
-            </a>
-          )}
+          <ProjectLiveLink
+            project={project}
+            variant="inline"
+            onClick={(e) => e.stopPropagation()}
+          />
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 import { projects } from "@/constants/projects";
 
 export default function RecentProjects() {
-  const recentProjects = [projects[2], projects[5]];
+  const recentProjects = [projects[0], projects[1]];
 
   return (
     <section className="px-4 sm:px-8 lg:px-16 pt-20 pb-5">
